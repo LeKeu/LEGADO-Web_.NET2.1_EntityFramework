@@ -1,0 +1,75 @@
+# Compilação do .NET
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.log
+
+# Configurações do Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Configurações do Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Pacotes e dependências
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+PackageReferences/
+.nuget/
+
+# Logs, depuração e crash dumps
+*.log
+*.tlog
+*.dmp
+
+# Arquivos temporários
+*.tmp
+*.cache
+*.diff
+*.orig
+
+# Dados do sistema operacional
+Thumbs.db
+.DS_Store
+
+# Configurações específicas do ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+
+# Arquivos gerados por ferramentas
+*.dbmdl
+*.jfm
+
+# Docker (se estiver usando)
+.dockerignore
+docker-compose.override.yml
+
+# Certificados de desenvolvimento HTTPS
+localhost.pfx
+localhost.key
+
+# Diretórios específicos do .NET Core
+project.lock.json
+artifacts/
+
+# Node.js (caso tenha frontend com Node/npm)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.test
