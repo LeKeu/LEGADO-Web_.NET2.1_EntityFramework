@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sales_Web_MVC.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using Sales_Web_MVC.Models.ViewModels;
 
 namespace Sales_Web_MVC.Controllers
 {
