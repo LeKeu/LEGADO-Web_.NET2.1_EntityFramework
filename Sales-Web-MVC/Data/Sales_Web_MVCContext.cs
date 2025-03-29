@@ -13,7 +13,11 @@ namespace Sales_Web_MVC.Models
         {
         }
 
-        public DbSet<Sales_Web_MVC.Models.Department> Department { get; set; }
+        public DbSet<Department> Department { get; set; }
+
+        // adicionei esses dois depois!
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
     }
 
     /*
@@ -26,5 +30,7 @@ namespace Sales_Web_MVC.Models
         utilizar o comando Update-Database
             IMPORTANTE! estou pegando s valores do appsettings, então tenho que checar se está tudo ok e o mysql service está rodando
             
+     SELLER E SALESRECORD adicionados depois!
+        Add-Migration OtherEntities, e, para atualizar o banco de dados, chamamos a Update-database
      */
 }
