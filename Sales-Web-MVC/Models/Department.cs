@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sales_Web_MVC.Models
 {
@@ -18,5 +17,10 @@ namespace Sales_Web_MVC.Models
             Id = id;
             Name = name;
         }
+
+        public void AddSeller(Seller sr) => Sellers.Add(sr);
+        public void RemoveSeller(Seller sr) => Sellers.Remove(sr);
+        public double TotalSales(DateTime initial, DateTime final)
+            => Sellers.Sum(seller => seller.TotalSales(initial, final));
     }
 }
