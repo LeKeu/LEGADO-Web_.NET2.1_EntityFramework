@@ -32,5 +32,17 @@ namespace Sales_Web_MVC.Models
             
      SELLER E SALESRECORD adicionados depois!
         Add-Migration OtherEntities, e, para atualizar o banco de dados, chamamos a Update-database
+
+     Do jeito que ele fez, o migration é apenas para criar a estrutura di banco de dados. Para popular a base, ele vai utilizar o
+     SEEDING SERVICE, que vai ser um serviço independente da Migration
+
+     Para ver que funciona mesmo, ele apagou o database. se eu rodar o update-database, a minha base de dados é criada novamente,
+     só que sem nenhum registro
+
+     CRIANDO O SEEDING SERVICE
+        criei ele dentro da pasta Data
+        no startup.cs, registra ele nainjeção de dependência do sistema
+        no seedingservice, criei todos os objetos e "salvei" no context
+        no startup, chamei o serviço no ocnfigura
      */
 }
