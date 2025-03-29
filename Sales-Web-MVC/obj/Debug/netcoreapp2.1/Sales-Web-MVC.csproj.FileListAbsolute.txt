@@ -29,4 +29,4 @@ C:\Users\Lekaticia\source\repos\Sales-Web-MVC\Sales-Web-MVC\bin\Debug\netcoreapp
 C:\Users\Lekaticia\source\repos\Sales-Web-MVC\Sales-Web-MVC\bin\Debug\netcoreapp2.1\Sales-Web-MVC.Views.pdb
 C:\Users\Lekaticia\source\repos\Sales-Web-MVC\Sales-Web-MVC\obj\Debug\netcoreapp2.1\Sales-Web-MVC.Views.pdb
 C:\Users\Lekaticia\source\repos\Sales-Web-MVC\Sales-Web-MVC\obj\Debug\netcoreapp2.1\Sales-Web-MVC.csproj.CopyComplete
-C:\Users\Lekaticia\source\repos\Sales-Web-MVC\Sales-Web-MVC\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.g.cshtml.cs
+C:\Users\Lekaticia\source\repos\Sales-Web-MVC\Sales-Web-MVC\obj\Debug\netcoreapp2.1\Sales-Web-MVC.csproj.AssemblyReference.cache
