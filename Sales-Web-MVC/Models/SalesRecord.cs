@@ -10,5 +10,16 @@ namespace Sales_Web_MVC.Models
         public double Amount { get; set; }
         public EnumSaleStatus Status { get; set; }
         public Seller Seller { get; set; }
+
+        public SalesRecord() { }
+
+        public SalesRecord(int id, DateTime date, double amount, EnumSaleStatus status, Seller seller)
+        {
+            Id = id;
+            Date = date;
+            Amount = amount;
+            Status = status;
+            Seller = seller;
+        }
     }
 }
