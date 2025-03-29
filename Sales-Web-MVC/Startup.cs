@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Sales_Web_MVC.Models;
 using Sales_Web_MVC.Data;
+using Sales_Web_MVC.Services;
 
 namespace Sales_Web_MVC
 {
@@ -37,6 +38,7 @@ namespace Sales_Web_MVC
                         builder.MigrationsAssembly("Sales_Web_MVC")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

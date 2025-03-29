@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sales_Web_MVC.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,18 @@ namespace Sales_Web_MVC.Controllers
         a index só retorna a chamada view, que retorna um iactionresult considerando esse nome de view (o index)
         ele vai acionar a view que estiver na pastinha sellers e que tenha o nome index
         */
+
+        private readonly SellerService _sellerservice;
+
+        public SellersController(SellerService sellerService)
+        {
+            _sellerservice = sellerService;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var list = _sellerservice.FindAll();
+            return View(list);
         }
     }
 }
