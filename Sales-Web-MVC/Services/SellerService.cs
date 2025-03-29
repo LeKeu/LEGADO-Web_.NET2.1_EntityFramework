@@ -14,6 +14,13 @@ namespace Sales_Web_MVC.Services
         }
 
         public List<Seller> FindAll() => _context.Seller.ToList();
+        public Seller FindById(int Id) => _context.Seller.FirstOrDefault(obj => obj.Id == Id);
+        public void Remove(int Id)
+        {
+            var obj = FindById(Id);
+            _context.Seller.Remove(obj);
+            _context.SaveChanges();
+        }
         public void Insert(Seller obj)
         {
             _context.Add(obj);
