@@ -1,4 +1,5 @@
-﻿using Sales_Web_MVC.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Sales_Web_MVC.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +15,10 @@ namespace Sales_Web_MVC.Services
         }
 
         public List<Seller> FindAll() => _context.Seller.ToList();
-        public Seller FindById(int Id) => _context.Seller.FirstOrDefault(obj => obj.Id == Id);
+
+        // o find by id, dessa maneira, retorna apenas o Seller, se carregar o Department do seller! Preciso de um "join"
+        //public Seller FindById(int Id) => _context.Seller.FirstOrDefault(obj => obj.Id == Id);
+        public Seller FindById(int Id) => _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == Id);
         public void Remove(int Id)
         {
             var obj = FindById(Id);
