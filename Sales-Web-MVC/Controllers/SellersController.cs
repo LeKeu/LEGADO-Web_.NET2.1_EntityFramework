@@ -40,7 +40,7 @@ namespace Sales_Web_MVC.Controllers
 
         public IActionResult Create()
         {
-            var departments = _departmentservice.FindAll();
+            var departments = _departmentservice.FindAllAsync();
             var viewModel = new SellerFromViewModel { Departments = departments };
             return View(viewModel);
         }
@@ -51,7 +51,7 @@ namespace Sales_Web_MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var departments = _departmentservice.FindAll();
+                var departments = _departmentservice.FindAllAsync();
                 var viewModel = new SellerFromViewModel { Seller = seller, Departments = departments };
                 return View(viewModel);
             }
@@ -101,7 +101,7 @@ namespace Sales_Web_MVC.Controllers
             if (obj == null)
                 return RedirectToAction(nameof(Error), new { message = "Id not found" });
 
-            List<Department> departments = _departmentservice.FindAll();
+            List<Department> departments = _departmentservice.FindAllAsync();
             SellerFromViewModel viewModel = new SellerFromViewModel { Seller = obj, Departments = departments };
 
             return View(viewModel);
@@ -113,7 +113,7 @@ namespace Sales_Web_MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var departments = _departmentservice.FindAll();
+                var departments = _departmentservice.FindAllAsync();
                 var viewModel = new SellerFromViewModel { Seller = seller, Departments = departments };
                 return View(viewModel);
             }
