@@ -34,7 +34,7 @@ namespace Sales_Web_MVC.Controllers
 
         public IActionResult Index()
         {
-            var list = _sellerservice.FindAll();
+            var list = _sellerservice.FindAllAsync();
             return View(list);
         }
 
@@ -65,7 +65,7 @@ namespace Sales_Web_MVC.Controllers
             if (id == null)
                 return RedirectToAction(nameof(Error), new { message = "Id not provided" });
 
-            var obj = _sellerservice.FindById(id.Value);
+            var obj = _sellerservice.FindByIdAsync(id.Value);
             if (obj == null)
                 return RedirectToAction(nameof(Error), new { message = "Object not found" });
 
@@ -76,7 +76,7 @@ namespace Sales_Web_MVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
-            _sellerservice.Remove(id);
+            _sellerservice.RemoveAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
@@ -85,7 +85,7 @@ namespace Sales_Web_MVC.Controllers
             if (id == null)
                 return RedirectToAction(nameof(Error), new { message = "Id not provided" });
 
-            var obj = _sellerservice.FindById(id.Value);
+            var obj = _sellerservice.FindByIdAsync(id.Value);
             if (obj == null)
                 return RedirectToAction(nameof(Error), new { message = "Id not found" });
 
@@ -97,7 +97,7 @@ namespace Sales_Web_MVC.Controllers
             if (id == null)
                 return RedirectToAction(nameof(Error), new { message = "Id not provided" });
 
-            var obj = _sellerservice.FindById(id.Value);
+            var obj = _sellerservice.FindByIdAsync(id.Value);
             if (obj == null)
                 return RedirectToAction(nameof(Error), new { message = "Id not found" });
 
@@ -123,7 +123,7 @@ namespace Sales_Web_MVC.Controllers
 
             try
             {
-                _sellerservice.Update(seller);
+                _sellerservice.UpdateAsync(seller);
                 return RedirectToAction(nameof(Index));
             }
             catch (ApplicationException e)
